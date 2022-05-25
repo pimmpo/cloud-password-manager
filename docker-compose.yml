@@ -18,3 +18,14 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  password-manager:
+    image: docker.io/library/application:latest
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/manager"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"

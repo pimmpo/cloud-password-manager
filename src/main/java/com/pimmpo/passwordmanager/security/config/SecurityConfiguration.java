@@ -47,6 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/test/**").permitAll()
+                .antMatchers("/api/test/swagger-ui/**").permitAll()
                 .anyRequest().authenticated();
         
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);

@@ -16,3 +16,7 @@ spring:
 app:
   jwtSecret: secret
   jwtExpirationMs: 86400000
+  
+springdoc:
+  swagger-ui:
+    path: /api/test/swagger-ui.html
